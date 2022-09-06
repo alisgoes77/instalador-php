@@ -1,4 +1,0 @@
-localhost
-elanime
-root
-vacio

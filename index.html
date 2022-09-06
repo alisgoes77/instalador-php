@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
         <link href="css/custom.css" rel="stylesheet">
 <style type="text/css">
     .ocultar {display: none;}
-.mostrar {display: block;   }
+    .mostrar {display: block;   }
 </style>
 
 
@@ -70,8 +70,8 @@
                             <!-- Leave for security protection, read docs for details -->
                             <div id="middle-wizard">
                                 <div class="step">
-                                    <h2 class="section_title">Presentation</h2>
-                                    <h3 class="main_question">Personal info</h3>
+                                    <h2 class="section_title">Presentacion</h2>
+                                    <h3 class="main_question">Informacion Personal</h3>
                                     <div class="form-group add_top_30">
                                         <label for="name">Nombre</label>
                                         <input type="text" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
@@ -81,7 +81,7 @@
                                         <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
                                     </div>
                                     <div class="form-group">
-                                        <label for="phone">telefono</label>
+                                        <label for="phone">Telefono</label>
                                         <input type="text" name="phone" id="phone" class="form-control required">
                                     </div>
                                     <div class="form-group">
@@ -100,13 +100,23 @@
                                         <input type="text" name="Usuario" id="Usuario" class="form-control required">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password1">Contraseña</label>
-                                        <input type="password" name="password1" id="password1" class="form-control required">
+                                        <label for="pass1">Contraseña</label>
+                                        <input type="password" name="pass1" id="pass1" class="form-control required">
                                     </div>
                                      <div class="form-group">
-                                        <label for="password2">confirmar Contraseña</label>
-                                        <input type="password" name="password2" id="password2" class="form-control required" onchange="verificarPasswords()">
+                                        <label for="pass2">confirmar Contraseña</label>
+                                        <input type="password" name="pass2" id="pass2" class="form-control required" onkeyup="verificarPasswords()">
                                     </div>
+                                    <div id="msg"></div>
+                                <!-- Mensajes de Verificación -->
+                                <div id="error" class="alert alert-danger ocultar" role="alert">
+                                    Las Contraseñas no coinciden, vuelve a intentar !
+                                </div>
+                                <div id="ok" class="alert alert-success ocultar" role="alert">
+                                    Las Contraseñas coinciden !
+                                </div>
+                                <!-- Fin Mensajes de Verificación -->
+
                                     </div><!-- end step-->
                                 <!-- /Work Availability > Freelance-Contract ============================== -->
                                     <!-- /step-->
@@ -132,7 +142,7 @@
                             <!-- /middle-wizard -->
                             <div id="bottom-wizard">
                                 <button type="button" name="backward" class="backward">Prev</button>
-                                <button type="button" name="forward" class="forward">Next</button>
+                                <button type="button" id="forward" name="forward" class="forward" disabled>Next</button>
                                 <button type="submit" name="process" class="submit">Submit</button>
                             </div>
                             <!-- /bottom-wizard -->
